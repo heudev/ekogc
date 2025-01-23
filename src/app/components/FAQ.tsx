@@ -12,10 +12,6 @@ const faqItems: FAQItem[] = [
         answer: "18-30 yaş arası, Türkiye'nin geleceğine dair fikirlerini paylaşmak isteyen tüm gençler katılabilir."
     },
     {
-        question: "Çalıştay ücreti ne kadar?",
-        answer: "Çalıştay katılımı ücretsizdir. Konaklama ve yemek giderleri organizasyon tarafından karşılanacaktır."
-    },
-    {
         question: "Başvuru için son tarih ne zaman?",
         answer: "Başvurular 1 Nisan 2025 tarihine kadar devam edecektir. Kontenjan sınırlıdır."
     },

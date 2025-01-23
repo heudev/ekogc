@@ -1,0 +1,28 @@
+export const config = {
+    eventDate: "2025-04-19 13:00:00",
+    title: "Gençlik Çalıştayı 2025",
+    subtitle: "Geleceğimizi birlikte şekillendirmek için bir araya geliyoruz",
+    location: "İzmir Ekonomi Üniversitesi",
+    contact: {
+        email: "info@example.com",
+        phone: "+90 (000) 000 00 00",
+        address: "İzmir Ekonomi Üniversitesi, Balçova, İzmir"
+    },
+    registration: {
+        earlyBird: {
+            price: 0,
+            dateRange: "1 Ocak - 1 Mart 2025"
+        },
+        regular: {
+            price: 0,
+            dateRange: "1 Mart - 1 Nisan 2025"
+        },
+        includes: [
+            "3 günlük çalıştay katılımı",
+            "Öğle yemekleri ve ikramlar",
+            "Çalıştay materyalleri",
+            "Sertifika",
+            "Networking etkinlikleri"
+        ]
+    }
+}; 

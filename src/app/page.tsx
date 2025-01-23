@@ -5,9 +5,13 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Team from "./components/Team";
 import FAQ from "./components/FAQ";
+import Program from "./components/Program";
+import Committees from "./components/Committees";
+import { config } from "./data/config";
+import About from "./components/About";
 
 const calculateTimeLeft = () => {
-  const difference = +new Date("2025-04-20") - +new Date();
+  const difference = +new Date(config.eventDate) - +new Date();
   return {
     gun: Math.max(0, Math.floor(difference / (1000 * 60 * 60 * 24))),
     saat: Math.max(0, Math.floor((difference / (1000 * 60 * 60)) % 24)),
@@ -36,6 +40,18 @@ const Home: NextPage = () => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+      setIsMenuOpen(false);
+    }
+  };
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
@@ -51,7 +67,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Türkiye Gençlik Çalıştayı 2025</title>
+        <title>{config.title}</title>
         <meta
           name="description"
           content="Türkiye'nin geleceğini şekillendirmek için bir araya geliyoruz. 20-22 Nisan 2025'te İzmir'de düzenlenecek Gençlik Çalıştayı'na katılın."
@@ -107,12 +123,12 @@ const Home: NextPage = () => {
               {/* Desktop Navigation */}
               <nav className="hidden md:block">
                 <ul className="flex space-x-6">
-                  <li><a href="#about" className="hover:text-gray-400 transition duration-300">Hakkında</a></li>
-                  <li><a href="#program" className="hover:text-gray-400 transition duration-300">Program</a></li>
-                  <li><a href="#committees" className="hover:text-gray-400 transition duration-300">Komiteler</a></li>
-                  <li><a href="#team" className="hover:text-gray-400 transition duration-300">Ekip</a></li>
-                  <li><a href="#faq" className="hover:text-gray-400 transition duration-300">SSS</a></li>
-                  <li><a href="#contact" className="hover:text-gray-400 transition duration-300">İletişim</a></li>
+                  <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-gray-400 transition duration-300">Hakkında</a></li>
+                  <li><a href="#program" onClick={(e) => scrollToSection(e, 'program')} className="hover:text-gray-400 transition duration-300">Program</a></li>
+                  <li><a href="#committees" onClick={(e) => scrollToSection(e, 'committees')} className="hover:text-gray-400 transition duration-300">Komiteler</a></li>
+                  <li><a href="#team" onClick={(e) => scrollToSection(e, 'team')} className="hover:text-gray-400 transition duration-300">Ekip</a></li>
+                  <li><a href="#faq" onClick={(e) => scrollToSection(e, 'faq')} className="hover:text-gray-400 transition duration-300">SSS</a></li>
+                  <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="hover:text-gray-400 transition duration-300">İletişim</a></li>
                 </ul>
               </nav>
 
@@ -123,12 +139,12 @@ const Home: NextPage = () => {
               >
                 <nav className="container mx-auto px-6 py-4">
                   <ul className="flex flex-col space-y-4">
-                    <li><a href="#about" className="block hover:text-gray-400 transition duration-300" onClick={toggleMenu}>Hakkında</a></li>
-                    <li><a href="#program" className="block hover:text-gray-400 transition duration-300" onClick={toggleMenu}>Program</a></li>
-                    <li><a href="#committees" className="block hover:text-gray-400 transition duration-300" onClick={toggleMenu}>Komiteler</a></li>
-                    <li><a href="#team" className="block hover:text-gray-400 transition duration-300" onClick={toggleMenu}>Ekip</a></li>
-                    <li><a href="#faq" className="block hover:text-gray-400 transition duration-300" onClick={toggleMenu}>SSS</a></li>
-                    <li><a href="#contact" className="block hover:text-gray-400 transition duration-300" onClick={toggleMenu}>İletişim</a></li>
+                    <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="block hover:text-gray-400 transition duration-300">Hakkında</a></li>
+                    <li><a href="#program" onClick={(e) => scrollToSection(e, 'program')} className="block hover:text-gray-400 transition duration-300">Program</a></li>
+                    <li><a href="#committees" onClick={(e) => scrollToSection(e, 'committees')} className="block hover:text-gray-400 transition duration-300">Komiteler</a></li>
+                    <li><a href="#team" onClick={(e) => scrollToSection(e, 'team')} className="block hover:text-gray-400 transition duration-300">Ekip</a></li>
+                    <li><a href="#faq" onClick={(e) => scrollToSection(e, 'faq')} className="block hover:text-gray-400 transition duration-300">SSS</a></li>
+                    <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="block hover:text-gray-400 transition duration-300">İletişim</a></li>
                   </ul>
                 </nav>
               </div>
@@ -142,13 +158,13 @@ const Home: NextPage = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>
             <div className="relative text-center px-4 md:px-0">
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FD6B00] via-[#004A81] to-white">
-                İzmir Ekonomi Üniversitesi
+                {config.location}
               </h1>
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-[#004A81] to-[#FD6B00]">
-                Gençlik Çalıştayı 2025
+                {config.title}
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-[#E6F3F3]">
-                Geleceğimizi birlikte şekillendirmek için bir araya geliyoruz
+                {config.subtitle}
               </p>
               <div className="mb-8">
                 <CountdownTimer timeLeft={timeLeft} />
@@ -156,12 +172,14 @@ const Home: NextPage = () => {
               <div className="space-y-4 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row justify-center items-center">
                 <a
                   href="#about"
+                  onClick={(e) => scrollToSection(e, 'about')}
                   className="w-full sm:w-auto inline-block bg-gradient-to-r from-[#004A81] to-[#FD6B00] text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:opacity-90 transition duration-300 transform hover:scale-105 hover:shadow-lg text-sm sm:text-base"
                 >
                   Daha Fazla Bilgi
                 </a>
                 <a
                   href="#register"
+                  onClick={(e) => scrollToSection(e, 'register')}
                   className="w-full sm:w-auto inline-block bg-transparent text-white border-2 border-white/20 px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition duration-300 transform hover:scale-105 hover:shadow-lg text-sm sm:text-base"
                 >
                   Hemen Kayıt Ol
@@ -170,149 +188,9 @@ const Home: NextPage = () => {
             </div>
           </section>
 
-          <section id="about" className="relative py-20 px-4 md:px-6">
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-            <div className="absolute inset-0 bg-[url('/images/background/pattern.png')] opacity-[0.03]"></div>
-            <div className="container relative mx-auto max-w-4xl text-center">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white via-[#004A81] to-[#FD6B00]">
-                Çalıştay Hakkında
-              </h2>
-              <p className="text-lg text-[#E6F3F3] leading-relaxed mb-8">
-                Türkiye Gençlik Çalıştayı, ülkemizin geleceğini şekillendirmek için gençlerin bir araya geldiği üç günlük yoğun bir programdır. Eğitim, ekonomi, teknoloji, çevre ve sosyal politikalar gibi kritik konularda fikirlerinizi paylaşın, tartışın ve çözüm önerileri geliştirin.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                <div className="bg-gradient-to-br from-black/90 to-gray-900/80 backdrop-blur-sm p-6 rounded-xl border border-[#004A81]/20 hover:border-[#FD6B00]/30 transition duration-300 shadow-lg hover:shadow-xl">
-                  <h3 className="text-xl font-semibold mb-4 text-[#FD6B00]">Fikir Alışverişi</h3>
-                  <p className="text-[#E6F3F3]">Farklı bakış açılarını dinleyin, tartışın ve yeni perspektifler kazanın.</p>
-                </div>
-                <div className="bg-gradient-to-br from-black/90 to-gray-900/80 backdrop-blur-sm p-6 rounded-xl border border-[#004A81]/20 hover:border-[#FD6B00]/30 transition duration-300 shadow-lg hover:shadow-xl">
-                  <h3 className="text-xl font-semibold mb-4 text-[#FD6B00]">Networking</h3>
-                  <p className="text-[#E6F3F3]">Türkiye&apos;nin dört bir yanından gelen değerli katılımcılarla tanışın.</p>
-                </div>
-                <div className="bg-gradient-to-br from-black/90 to-gray-900/80 backdrop-blur-sm p-6 rounded-xl border border-[#004A81]/20 hover:border-[#FD6B00]/30 transition duration-300 shadow-lg hover:shadow-xl">
-                  <h3 className="text-xl font-semibold mb-4 text-[#FD6B00]">Çözüm Üretme</h3>
-                  <p className="text-[#E6F3F3]">Ülkemizin sorunlarına yönelik somut çözüm önerileri geliştirin.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="program" className="relative py-20 px-4 md:px-6">
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-            <div className="absolute inset-0 bg-[url('/images/background/pattern.png')] opacity-[0.03]"></div>
-            <div className="container relative mx-auto max-w-4xl">
-              <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-white via-[#004A81] to-[#FD6B00]">
-                Program Akışı
-              </h2>
-              <div className="space-y-8">
-                <div className="bg-gradient-to-br from-black/90 to-gray-900/80 backdrop-blur-sm p-6 rounded-xl border border-[#004A81]/20 hover:border-[#FD6B00]/30 transition duration-300 shadow-lg hover:shadow-xl">
-                  <h3 className="text-xl font-semibold mb-4 text-[#FD6B00]">1. Gün - 20 Nisan</h3>
-                  <ul className="space-y-3 text-[#E6F3F3]">
-                    <li>09:00 - Kayıt ve Tanışma</li>
-                    <li>10:00 - Açılış Konuşmaları</li>
-                    <li>11:30 - Panel: Türkiye&apos;nin Güncel Sorunları</li>
-                    <li>13:00 - Öğle Yemeği</li>
-                    <li>14:30 - Komite Tanıtımları ve Seçimleri</li>
-                    <li>16:00 - Komite Çalışmaları Başlangıcı</li>
-                    <li>18:00 - Networking Resepsiyonu</li>
-                  </ul>
-                </div>
-                <div className="bg-gradient-to-br from-black/90 to-gray-900/80 backdrop-blur-sm p-6 rounded-xl border border-[#004A81]/20 hover:border-[#FD6B00]/30 transition duration-300 shadow-lg hover:shadow-xl">
-                  <h3 className="text-xl font-semibold mb-4 text-[#FD6B00]">2. Gün - 21 Nisan</h3>
-                  <ul className="space-y-3 text-[#E6F3F3]">
-                    <li>09:30 - Komite Çalışmaları</li>
-                    <li>11:00 - Uzman Sunumları</li>
-                    <li>13:00 - Öğle Yemeği</li>
-                    <li>14:30 - Workshop Oturumları</li>
-                    <li>16:30 - Proje Geliştirme</li>
-                    <li>18:00 - Kültürel Etkinlik</li>
-                  </ul>
-                </div>
-                <div className="bg-gradient-to-br from-black/90 to-gray-900/80 backdrop-blur-sm p-6 rounded-xl border border-[#004A81]/20 hover:border-[#FD6B00]/30 transition duration-300 shadow-lg hover:shadow-xl">
-                  <h3 className="text-xl font-semibold mb-4 text-[#FD6B00]">3. Gün - 22 Nisan</h3>
-                  <ul className="space-y-3 text-[#E6F3F3]">
-                    <li>09:30 - Komite Sunumları</li>
-                    <li>11:30 - Değerlendirme Oturumu</li>
-                    <li>13:00 - Öğle Yemeği</li>
-                    <li>14:30 - Sonuç Bildirgesinin Hazırlanması</li>
-                    <li>16:00 - Kapanış Töreni ve Sertifika Takdimi</li>
-                    <li>18:00 - Gala Yemeği</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="committees" className="relative py-20 px-4 md:px-6">
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-            <div className="absolute inset-0 bg-[url('/images/background/pattern.png')] opacity-[0.03]"></div>
-            <div className="container relative mx-auto max-w-6xl">
-              <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-white via-[#004A81] to-[#FD6B00]">
-                Çalıştay Komiteleri
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div className="bg-gradient-to-br from-black/90 to-gray-900/80 backdrop-blur-sm p-6 rounded-xl border border-[#004A81]/20 hover:border-[#FD6B00]/30 transition duration-300 shadow-lg hover:shadow-xl">
-                  <h3 className="text-xl font-semibold mb-4 text-[#FD6B00]">Eğitim Politikaları Komitesi</h3>
-                  <p className="text-[#E6F3F3] mb-4">Türkiye&apos;nin eğitim sistemini analiz ederek, yenilikçi ve sürdürülebilir eğitim politikaları geliştirmeyi hedefler.</p>
-                  <ul className="text-[#E6F3F3] list-disc list-inside space-y-2">
-                    <li>Müfredat Geliştirme</li>
-                    <li>Öğretmen Yetiştirme</li>
-                    <li>Uzaktan Eğitim</li>
-                  </ul>
-                </div>
-
-                <div className="bg-gradient-to-br from-black/90 to-gray-900/80 backdrop-blur-sm p-6 rounded-xl border border-[#004A81]/20 hover:border-[#FD6B00]/30 transition duration-300 shadow-lg hover:shadow-xl">
-                  <h3 className="text-xl font-semibold mb-4 text-[#FD6B00]">Teknoloji ve İnovasyon Komitesi</h3>
-                  <p className="text-[#E6F3F3] mb-4">Dijital dönüşüm sürecinde Türkiye&apos;nin teknolojik gelişimini hızlandıracak projeler üretir.</p>
-                  <ul className="text-[#E6F3F3] list-disc list-inside space-y-2">
-                    <li>Yapay Zeka</li>
-                    <li>Siber Güvenlik</li>
-                    <li>Dijital Dönüşüm</li>
-                  </ul>
-                </div>
-
-                <div className="bg-gradient-to-br from-black/90 to-gray-900/80 backdrop-blur-sm p-6 rounded-xl border border-[#004A81]/20 hover:border-[#FD6B00]/30 transition duration-300 shadow-lg hover:shadow-xl">
-                  <h3 className="text-xl font-semibold mb-4 text-[#FD6B00]">Sürdürülebilirlik Komitesi</h3>
-                  <p className="text-[#E6F3F3] mb-4">Çevre sorunlarına yönelik sürdürülebilir çözümler geliştirerek, yeşil ekonomiye geçiş sürecini destekler.</p>
-                  <ul className="text-[#E6F3F3] list-disc list-inside space-y-2">
-                    <li>İklim Değişikliği</li>
-                    <li>Yenilenebilir Enerji</li>
-                    <li>Sıfır Atık</li>
-                  </ul>
-                </div>
-
-                <div className="bg-gradient-to-br from-black/90 to-gray-900/80 backdrop-blur-sm p-6 rounded-xl border border-[#004A81]/20 hover:border-[#FD6B00]/30 transition duration-300 shadow-lg hover:shadow-xl">
-                  <h3 className="text-xl font-semibold mb-4 text-[#FD6B00]">Sosyal Politikalar Komitesi</h3>
-                  <p className="text-[#E6F3F3] mb-4">Toplumsal eşitlik ve sosyal adalet için politikalar geliştirir.</p>
-                  <ul className="text-[#E6F3F3] list-disc list-inside space-y-2">
-                    <li>Gençlik Politikaları</li>
-                    <li>Sosyal İçerme</li>
-                    <li>Toplumsal Cinsiyet Eşitliği</li>
-                  </ul>
-                </div>
-
-                <div className="bg-gradient-to-br from-black/90 to-gray-900/80 backdrop-blur-sm p-6 rounded-xl border border-[#004A81]/20 hover:border-[#FD6B00]/30 transition duration-300 shadow-lg hover:shadow-xl">
-                  <h3 className="text-xl font-semibold mb-4 text-[#FD6B00]">Ekonomi ve İstihdam Komitesi</h3>
-                  <p className="text-[#E6F3F3] mb-4">Genç istihdamını artıracak ve ekonomik kalkınmayı destekleyecek projeler üretir.</p>
-                  <ul className="text-[#E6F3F3] list-disc list-inside space-y-2">
-                    <li>Girişimcilik</li>
-                    <li>Dijital Ekonomi</li>
-                    <li>İstihdam Politikaları</li>
-                  </ul>
-                </div>
-
-                <div className="bg-gradient-to-br from-black/90 to-gray-900/80 backdrop-blur-sm p-6 rounded-xl border border-[#004A81]/20 hover:border-[#FD6B00]/30 transition duration-300 shadow-lg hover:shadow-xl">
-                  <h3 className="text-xl font-semibold mb-4 text-[#FD6B00]">Kültür ve Sanat Komitesi</h3>
-                  <p className="text-[#E6F3F3] mb-4">Kültürel mirasımızı koruyarak geleceğe taşıyacak projeler geliştirir.</p>
-                  <ul className="text-[#E6F3F3] list-disc list-inside space-y-2">
-                    <li>Kültürel Miras</li>
-                    <li>Sanat Politikaları</li>
-                    <li>Kültürel Diplomasi</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
+          <About />
+          <Program />
+          <Committees />
 
           <section id="register" className="relative py-20 px-4 md:px-6">
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
@@ -326,23 +204,21 @@ const Home: NextPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-4">
                     <p className="text-xl font-bold text-white">Erken Kayıt</p>
-                    <p className="text-3xl font-bold text-white">₺750</p>
-                    <p className="text-gray-300">1 Ocak - 1 Mart 2025</p>
+                    <p className="text-3xl font-bold text-white">₺{config.registration.earlyBird.price}</p>
+                    <p className="text-gray-300">{config.registration.earlyBird.dateRange}</p>
                   </div>
                   <div className="space-y-4">
                     <p className="text-xl font-bold text-white">Normal Kayıt</p>
-                    <p className="text-3xl font-bold text-white">₺950</p>
-                    <p className="text-gray-300">1 Mart - 1 Nisan 2025</p>
+                    <p className="text-3xl font-bold text-white">₺{config.registration.regular.price}</p>
+                    <p className="text-gray-300">{config.registration.regular.dateRange}</p>
                   </div>
                 </div>
                 <div className="mt-8 space-y-4 text-gray-200">
                   <p>Katılım ücretine dahil olanlar:</p>
                   <ul className="list-disc list-inside space-y-2">
-                    <li>3 günlük çalıştay katılımı</li>
-                    <li>Öğle yemekleri ve ikramlar</li>
-                    <li>Çalıştay materyalleri</li>
-                    <li>Sertifika</li>
-                    <li>Networking etkinlikleri</li>
+                    {config.registration.includes.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </div>
                 <div className="mt-8">
@@ -373,19 +249,19 @@ const Home: NextPage = () => {
                   <ul className="space-y-4 text-gray-200">
                     <li>
                       <strong className="block text-white">E-posta:</strong>
-                      <a href="mailto:info@gencliktalistayi.org" className="hover:text-[#FD6B00] transition duration-300">
-                        info@gencliktalistayi.org
+                      <a href={`mailto:${config.contact.email}`} className="hover:text-[#FD6B00] transition duration-300">
+                        {config.contact.email}
                       </a>
                     </li>
                     <li>
                       <strong className="block text-white">Telefon:</strong>
-                      <a href="tel:+902321234567" className="hover:text-[#FD6B00] transition duration-300">
-                        +90 (232) 123 45 67
+                      <a href={`tel:${config.contact.phone}`} className="hover:text-[#FD6B00] transition duration-300">
+                        {config.contact.phone}
                       </a>
                     </li>
                     <li>
                       <strong className="block text-white">Adres:</strong>
-                      <p>İzmir Ekonomi Üniversitesi, Balçova, İzmir</p>
+                      <p>{config.contact.address}</p>
                     </li>
                   </ul>
                 </div>
@@ -417,7 +293,7 @@ const Home: NextPage = () => {
         <footer className="relative bg-black/80 text-gray-400 py-8 border-t border-white/10 z-10">
           <div className="absolute inset-0 bg-[url('/images/background/pattern.png')] opacity-[0.03]"></div>
           <div className="container relative mx-auto px-4 text-center">
-            <p>© 2025 Türkiye Gençlik Çalıştayı. Tüm hakları saklıdır.</p>
+            <p>© 2025 {config.title}. Tüm hakları saklıdır.</p>
           </div>
         </footer>
       </div>
