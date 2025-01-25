@@ -4,25 +4,25 @@ export const config = {
     subtitle: "Geleceğimizi birlikte şekillendirmek için bir araya geliyoruz",
     location: "İzmir Ekonomi Üniversitesi",
     contact: {
-        email: "info@example.com",
-        phone: "+90 (000) 000 00 00",
+        email: "ekogc2025@gmail.com",
         address: "İzmir Ekonomi Üniversitesi, Balçova, İzmir"
     },
     registration: {
         earlyBird: {
-            price: 0,
-            dateRange: "1 Ocak - 1 Mart 2025"
+            price: 650,
+            dateRange: "1 Mart - 31 Mart 2025"
         },
         regular: {
-            price: 0,
-            dateRange: "1 Mart - 1 Nisan 2025"
+            price: 750,
+            dateRange: "1 Nisan - 10 Nisan 2025"
         },
         includes: [
             "3 günlük çalıştay katılımı",
             "Öğle yemekleri ve ikramlar",
             "Çalıştay materyalleri",
             "Sertifika",
-            "Networking etkinlikleri"
+            "Rozet",
+            "Networking etkinlikleri",
         ]
     }
 }; 

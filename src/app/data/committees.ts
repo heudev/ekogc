@@ -1,56 +1,56 @@
 export const committees = [
     {
-        title: "Eğitim Politikaları Komitesi",
-        description: "Türkiye'nin eğitim sistemini analiz ederek, yenilikçi ve sürdürülebilir eğitim politikaları geliştirmeyi hedefler.",
+        title: "Kadın Hakları",
+        description: "Kadınların toplumsal yaşamdaki rollerini güçlendirmek, eşit fırsatlar sağlamak ve farkındalık oluşturmak için politikalar geliştirir.",
         topics: [
-            "Müfredat Geliştirme",
-            "Öğretmen Yetiştirme",
-            "Uzaktan Eğitim"
+            "Kadına Yönelik Şiddet",
+            "Eşit İşe Eşit Ücret",
+            "Kadın Liderliği"
         ]
     },
     {
-        title: "Teknoloji ve İnovasyon Komitesi",
-        description: "Dijital dönüşüm sürecinde Türkiye'nin teknolojik gelişimini hızlandıracak projeler üretir.",
+        title: "Hukuk",
+        description: "Adaletin sağlanması, hukukun üstünlüğünün korunması ve insan haklarının güvence altına alınması için çalışmalar yapar.",
         topics: [
-            "Yapay Zeka",
-            "Siber Güvenlik",
-            "Dijital Dönüşüm"
+            "Hukukun Üstünlüğü",
+            "İnsan Hakları",
+            "Adil Yargılama"
         ]
     },
     {
-        title: "Sürdürülebilirlik Komitesi",
-        description: "Çevre sorunlarına yönelik sürdürülebilir çözümler geliştirerek, yeşil ekonomiye geçiş sürecini destekler.",
+        title: "Yoksulluk",
+        description: "Yoksullukla mücadele etmek, sosyal yardımları artırmak ve sürdürülebilir kalkınmayı desteklemek için çözümler sunar.",
         topics: [
-            "İklim Değişikliği",
-            "Yenilenebilir Enerji",
-            "Sıfır Atık"
+            "Gelir Adaletsizliği",
+            "Sosyal Yardımlar",
+            "Sürdürülebilir Kalkınma"
         ]
     },
     {
-        title: "Sosyal Politikalar Komitesi",
-        description: "Toplumsal eşitlik ve sosyal adalet için politikalar geliştirir.",
+        title: "İklim Değişikliği",
+        description: "Küresel iklim değişikliğine karşı mücadele ederek, çevresel sürdürülebilirliği sağlamak ve doğal kaynakları korumak için politikalar geliştirir.",
         topics: [
-            "Gençlik Politikaları",
-            "Sosyal İçerme",
-            "Toplumsal Cinsiyet Eşitliği"
+            "Karbon Salınımı Azaltımı",
+            "Enerji Verimliliği",
+            "Biyoçeşitlilik Koruma"
         ]
     },
     {
-        title: "Ekonomi ve İstihdam Komitesi",
-        description: "Genç istihdamını artıracak ve ekonomik kalkınmayı destekleyecek projeler üretir.",
+        title: "Kriz",
+        description: "Kriz yönetimi ve dayanıklılık konularında toplumun hazırlıklı olmasını sağlayacak stratejiler üretir.",
         topics: [
-            "Girişimcilik",
-            "Dijital Ekonomi",
-            "İstihdam Politikaları"
+            "Afet Yönetimi",
+            "Sağlık Krizleri",
+            "Ekonomik Dalgalanmalar"
         ]
     },
     {
-        title: "Kültür ve Sanat Komitesi",
-        description: "Kültürel mirasımızı koruyarak geleceğe taşıyacak projeler geliştirir.",
+        title: "Ekonomi",
+        description: "Ekonomik büyümeyi teşvik etmek, yenilikçi çözümler üretmek ve finansal sürdürülebilirliği sağlamak için politikalar oluşturur.",
         topics: [
-            "Kültürel Miras",
-            "Sanat Politikaları",
-            "Kültürel Diplomasi"
+            "Girişimcilik Desteği",
+            "Yeşil Ekonomi",
+            "Teknolojik Yenilikler"
         ]
     }
-]; 
+];

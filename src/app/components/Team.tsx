@@ -36,7 +36,7 @@ const Team = () => {
             <div className="absolute inset-0 bg-[url('/images/background/pattern.png')] opacity-[0.03]"></div>
             <div className="container relative mx-auto">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-white via-[#004A81] to-[#FD6B00]">
-                    Organizasyon Komitesi
+                    Yönetim Ekibi
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                     {teamMembers.map((member, index) => (

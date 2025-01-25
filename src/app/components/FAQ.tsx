@@ -9,15 +9,39 @@ interface FAQItem {
 const faqItems: FAQItem[] = [
     {
         question: "Çalıştaya kimler katılabilir?",
-        answer: "18-30 yaş arası, Türkiye'nin geleceğine dair fikirlerini paylaşmak isteyen tüm gençler katılabilir."
+        answer: "15 yaş ve üzeri, Türkiye'nin geleceğine dair fikirlerini paylaşmak isteyen tüm gençler katılabilir."
     },
     {
         question: "Başvuru için son tarih ne zaman?",
-        answer: "Başvurular 1 Nisan 2025 tarihine kadar devam edecektir. Kontenjan sınırlıdır."
+        answer: "Başvurular 10 Nisan 2025 tarihine kadar devam edecektir. Kontenjan sınırlıdır."
     },
     {
         question: "Katılım belgesi verilecek mi?",
-        answer: "Evet, çalıştay sonunda tüm katılımcılara dijital ve basılı katılım belgesi verilecektir."
+        answer: "Evet, çalıştay sonunda tüm katılımcılara dijital katılım belgesi verilecektir."
+    },
+    {
+        question: "Katılım ücreti ne kadar?",
+        answer: "Erken kayıt: ₺650, Normal kayıt: ₺750"
+    },
+    {
+        question: "Katılım ücretine dahil olanlar neler?",
+        answer: "3 günlük çalıştay katılımı, Öğle yemekleri ve ikramlar, Çalıştay materyalleri, Sertifika, Rozet, Networking etkinlikleri"
+    },
+    {
+        question: "Çalıştayda ne kadar süre?",
+        answer: "3 gün"
+    },
+    {
+        question: "Çalıştay ne zaman başlayacak?",
+        answer: "2025-04-19 13:00:00"
+    },
+    {
+        question: "Çalıştay ne zaman sona erecek?",
+        answer: "2025-04-21 13:00:00"
+    },
+    {
+        question: "Çalıştay nerede olacak?",
+        answer: "İzmir Ekonomi Üniversitesi, Balçova, İzmir"
     }
 ];
 

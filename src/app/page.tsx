@@ -254,12 +254,6 @@ const Home: NextPage = () => {
                       </a>
                     </li>
                     <li>
-                      <strong className="block text-white">Telefon:</strong>
-                      <a href={`tel:${config.contact.phone}`} className="hover:text-[#FD6B00] transition duration-300">
-                        {config.contact.phone}
-                      </a>
-                    </li>
-                    <li>
                       <strong className="block text-white">Adres:</strong>
                       <p>{config.contact.address}</p>
                     </li>
@@ -269,17 +263,12 @@ const Home: NextPage = () => {
                   <h3 className="text-xl font-semibold mb-4 text-[#FD6B00]">Sosyal Medya</h3>
                   <ul className="space-y-4">
                     <li>
-                      <a href="#" className="text-gray-200 hover:text-[#FD6B00] transition duration-300 flex items-center">
-                        <span className="mr-2">Twitter</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="text-gray-200 hover:text-[#FD6B00] transition duration-300 flex items-center">
+                      <a href="https://www.instagram.com/eko.gc" target="_blank" className="text-gray-200 hover:text-[#FD6B00] transition duration-300 flex items-center">
                         <span className="mr-2">Instagram</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-gray-200 hover:text-[#FD6B00] transition duration-300 flex items-center">
+                      <a href="https://www.linkedin.com/company/izmir-ekonomi-universitesi-genclik-calistayi/" target="_blank" className="text-gray-200 hover:text-[#FD6B00] transition duration-300 flex items-center">
                         <span className="mr-2">LinkedIn</span>
                       </a>
                     </li>
