@@ -10,7 +10,7 @@ const teamMembers: TeamMember[] = [
     {
         name: "Ilgaz Yaman",
         role: "Çalıştay Başkanı",
-        image: "/images/team/member1.jpg"
+        image: "https://media.licdn.com/dms/image/v2/D5603AQFtY6KdqyvmTQ/profile-displayphoto-shrink_800_800/B56ZVgotjMHEAc-/0/1741083043908?e=1746662400&v=beta&t=nGcmJIQAq_9iaKpysQNWzLlB51g3qgh7CF5tAhN2iV8"
     },
     {
         name: "Eray Kaytancı",
@@ -19,12 +19,12 @@ const teamMembers: TeamMember[] = [
     },
     {
         name: "Enes Uysal",
-        role: "Websitesi Sorumlusu",
-        image: "/images/team/member2.jpg"
+        role: "IT Sorumlusu",
+        image: "https://enes.run/_next/image?url=%2Fimages%2Fprofile%2Fenes1.jpg&w=3840&q=75"
     },
     {
         name: "Diğer kişiler",
-        role: "Organizasyon Somplusu",
+        role: "Organizasyon Sorumluları",
         image: "/images/team/member2.jpg"
     }
 ];

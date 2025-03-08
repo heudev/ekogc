@@ -9,11 +9,11 @@ export const config = {
     },
     registration: {
         earlyBird: {
-            price: 650,
+            price: "Duyurulacak...",
             dateRange: "1 Mart - 31 Mart 2025"
         },
         regular: {
-            price: 750,
+            price: "Duyurulacak...",
             dateRange: "1 Nisan - 10 Nisan 2025"
         },
         includes: [
