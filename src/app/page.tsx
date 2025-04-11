@@ -200,21 +200,15 @@ const Home: NextPage = () => {
                 Katılım Bilgileri
               </h2>
               <div className="bg-gradient-to-br from-black/90 to-gray-900/80 backdrop-blur-sm p-8 rounded-xl border border-[#004A81]/20 hover:border-[#FD6B00]/30 shadow-lg">
-                <h3 className="text-2xl font-semibold mb-6 text-[#FD6B00]">Katılım Ücreti</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <h3 className="text-2xl font-semibold mb-6 text-[#FD6B00]">Katılım</h3>
+                <div className="">
                   <div className="space-y-4">
-                    <p className="text-xl font-bold text-white">Erken Kayıt</p>
-                    <p className="text-3xl font-bold text-white">₺{config.registration.earlyBird.price}</p>
-                    <p className="text-gray-300">{config.registration.earlyBird.dateRange}</p>
-                  </div>
-                  <div className="space-y-4">
-                    <p className="text-xl font-bold text-white">Normal Kayıt</p>
-                    <p className="text-3xl font-bold text-white">₺{config.registration.regular.price}</p>
+                    <p className="text-xl font-bold text-white">Kayıt</p>
+                    <p className="text-3xl font-bold text-white">{config.registration.regular.price}</p>
                     <p className="text-gray-300">{config.registration.regular.dateRange}</p>
                   </div>
                 </div>
                 <div className="mt-8 space-y-4 text-gray-200">
-                  <p>Katılım ücretine dahil olanlar:</p>
                   <ul className="list-disc list-inside space-y-2">
                     {config.registration.includes.map((item, index) => (
                       <li key={index}>{item}</li>

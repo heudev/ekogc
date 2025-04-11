@@ -1,6 +1,6 @@
 export const program = [
     {
-        day: "1. Gün - 19 Nisan",
+        day: "1. Gün - 3 Mayıs",
         schedule: [
             { time: "09:00", activity: "Kayıt" },
             { time: "10:00", activity: "Açılış Konuşmaları" },
@@ -17,7 +17,7 @@ export const program = [
         ]
     },
     {
-        day: "2. Gün - 20 Nisan",
+        day: "2. Gün - 4 Mayıs",
         schedule: [
             { time: "09:00", activity: "Oturum 6" },
             { time: "10:00", activity: "Mola" },
