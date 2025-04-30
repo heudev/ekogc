@@ -1,56 +1,50 @@
 export const committees = [
     {
-        title: "Kadın Hakları",
-        description: "Kadınların toplumsal yaşamdaki rollerini güçlendirmek, eşit fırsatlar sağlamak ve farkındalık oluşturmak için politikalar geliştirir.",
+        title: "Eğitim Komitesi",
+        description: "Eğitim alanında gençlerin gelişimi için çalışmalar yürüten komite.",
         topics: [
-            "Kadına Yönelik Şiddet",
-            "Eşit İşe Eşit Ücret",
-            "Kadın Liderliği"
+            "Teknolojinin Gençlerin Öğrenme Süreçlerine Etkisi"
         ]
     },
     {
-        title: "Hukuk",
-        description: "Adaletin sağlanması, hukukun üstünlüğünün korunması ve insan haklarının güvence altına alınması için çalışmalar yapar.",
+        title: "Ekonomi Komitesi",
+        description: "Ekonomik konularda gençlerin karşılaştığı sorunları ele alan komite.",
         topics: [
-            "Hukukun Üstünlüğü",
-            "İnsan Hakları",
-            "Adil Yargılama"
+            "Enflasyon",
+            "İşsizlik",
+            "Ekonomik dalgalanmaların gençler üzerindeki etkisi"
         ]
     },
     {
-        title: "Yoksulluk",
-        description: "Yoksullukla mücadele etmek, sosyal yardımları artırmak ve sürdürülebilir kalkınmayı desteklemek için çözümler sunar.",
+        title: "Çevre Komitesi",
+        description: "Çevresel sürdürülebilirlik ve doğal kaynakların korunması için çalışan komite.",
         topics: [
-            "Gelir Adaletsizliği",
-            "Sosyal Yardımlar",
-            "Sürdürülebilir Kalkınma"
+            "Doğal Kaynakların Verimli Kullanımı",
+            "Gençlerin Sürdürülebilir Çözümleri"
         ]
     },
     {
-        title: "İklim Değişikliği",
-        description: "Küresel iklim değişikliğine karşı mücadele ederek, çevresel sürdürülebilirliği sağlamak ve doğal kaynakları korumak için politikalar geliştirir.",
+        title: "İnsan Hakları Komitesi",
+        description: "Dijital çağda insan hakları ve özgürlükleri konusunda çalışmalar yapan komite.",
         topics: [
-            "Karbon Salınımı Azaltımı",
-            "Enerji Verimliliği",
-            "Biyoçeşitlilik Koruma"
+            "Dijital Haklar ve Özgürlükler",
+            "Mahremiyet",
+            "Sansür ve Güvenlik"
         ]
     },
     {
-        title: "Kriz",
-        description: "Kriz yönetimi ve dayanıklılık konularında toplumun hazırlıklı olmasını sağlayacak stratejiler üretir.",
+        title: "Spor Komitesi",
+        description: "Gençlerde spor ve fiziksel aktivite konularında çalışmalar yürüten komite.",
         topics: [
-            "Afet Yönetimi",
-            "Sağlık Krizleri",
-            "Ekonomik Dalgalanmalar"
+            "Gençlerde Spor ve Hareketlilik",
+            "Fiziksel Aktivitenin Gençler Üzerindeki Rolü"
         ]
     },
     {
-        title: "Ekonomi",
-        description: "Ekonomik büyümeyi teşvik etmek, yenilikçi çözümler üretmek ve finansal sürdürülebilirliği sağlamak için politikalar oluşturur.",
+        title: "Dışişleri Komitesi",
+        description: "Uluslararası ilişkiler ve diplomasi alanında çalışmalar yürüten komite.",
         topics: [
-            "Girişimcilik Desteği",
-            "Yeşil Ekonomi",
-            "Teknolojik Yenilikler"
+            "Devletler ve Uluslararası Örgütler Arasındaki İlişkiler"
         ]
     }
 ];
