@@ -9,6 +9,7 @@ import Program from "./components/Program";
 import Committees from "./components/Committees";
 import { config } from "./data/config";
 import About from "./components/About";
+import Message from "./components/Message";
 
 const calculateTimeLeft = () => {
   const difference = +new Date(config.eventDate) - +new Date();
@@ -226,6 +227,8 @@ const Home: NextPage = () => {
               </div>
             </div>
           </section>
+
+          <Message />
 
           <Team />
           <FAQ />

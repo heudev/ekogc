@@ -10,7 +10,7 @@ const teamMembers: TeamMember[] = [
     {
         name: "Ilgaz Yaman",
         role: "Çalıştay Başkanı",
-        image: "https://media.licdn.com/dms/image/v2/D5603AQFtY6KdqyvmTQ/profile-displayphoto-shrink_800_800/B56ZVgotjMHEAc-/0/1741083043908?e=1746662400&v=beta&t=nGcmJIQAq_9iaKpysQNWzLlB51g3qgh7CF5tAhN2iV8"
+        image: "/images/team/ilgaz.jpeg"
     },
     {
         name: "Eray Kaytancı",
