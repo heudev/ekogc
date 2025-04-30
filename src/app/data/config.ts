@@ -13,7 +13,7 @@ export const config = {
             dateRange: "11 Nisan - 20 Nisan 2025"
         },
         includes: [
-            "3 günlük çalıştay katılımı",
+            "2 günlük çalıştay katılımı",
             "Çalıştay materyalleri",
             "Sertifika",
             "Rozet",
