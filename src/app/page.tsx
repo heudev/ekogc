@@ -218,7 +218,8 @@ const Home: NextPage = () => {
                 </div>
                 <div className="mt-8">
                   <a
-                    href="#"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSd1RtHJQjb_h30WqR_4d-ZjSkzTA_hUkvt8VavnTeLrgnjYSw/viewform"
+                    target="_blank"
                     className="inline-block bg-gradient-to-r from-[#004A81] to-[#FD6B00] text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition duration-300 transform hover:scale-105"
                   >
                     Hemen Kayıt Ol
